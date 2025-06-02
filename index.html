@@ -48,11 +48,6 @@
       font-size: 24px;
     }
 
-    .logo-img {
-      margin-top: 10px;
-      width: 80px;
-    }
-
     hr {
       width: 100%;
       border: none;
@@ -62,31 +57,31 @@
 
     .verified {
       text-align: center;
-    }
-
-    .verified img.profile {
-      width: 100px;
-      border-radius: 50%;
-      margin: 20px 0;
+      margin-top: 10px;
     }
 
     .verified h2 {
       font-size: 20px;
       margin: 10px 0;
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 8px;
-    }
-
-    .verified h2 img.tick {
-      width: 22px;
-      height: 22px;
+      justify-content: center;
+      gap: 6px;
     }
 
     .verified .green {
       color: #25d366;
       font-weight: 600;
+    }
+
+    .tick {
+      width: 20px;
+      height: 20px;
+    }
+
+    .whatsapp-logo {
+      width: 60px;
+      margin: 10px 0;
     }
 
     .message {
@@ -97,33 +92,35 @@
       font-size: 16px;
     }
 
-    .whatsapp-neon {
-      display: inline-block;
-      background-color: #25d366;
-      color: #000;
+    .whatsapp-button {
+      background: linear-gradient(45deg, #25d366, #00c853);
+      color: white;
       padding: 18px 32px;
-      font-size: 18px;
-      font-weight: bold;
       border-radius: 40px;
+      font-weight: bold;
       text-decoration: none;
-      text-align: center;
-      margin: 30px auto;
-      box-shadow: 0 0 20px #25d366, 0 0 10px #25d366 inset;
-      animation: pulse 2s infinite ease-in-out;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 18px;
+      box-shadow: 0 0 15px #25d366;
+      animation: pulse 2s infinite;
+      transition: transform 0.2s;
     }
 
-    .whatsapp-neon:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 30px #25d366, 0 0 20px #25d366 inset;
+    .whatsapp-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff99;
     }
 
     @keyframes pulse {
-      0%, 100% {
-        box-shadow: 0 0 10px #25d366, 0 0 5px #25d366 inset;
+      0% {
+        box-shadow: 0 0 15px #25d366;
       }
       50% {
-        box-shadow: 0 0 25px #25d366, 0 0 15px #25d366 inset;
+        box-shadow: 0 0 25px #00ff99;
+      }
+      100% {
+        box-shadow: 0 0 15px #25d366;
       }
     }
 
@@ -190,9 +187,9 @@
     }
 
     @media (max-width: 600px) {
-      .whatsapp-neon, .clientes {
+      .whatsapp-button, .clientes {
         font-size: 14px;
-        padding: 14px 22px;
+        padding: 14px 20px;
       }
       .message {
         font-size: 14px;
@@ -203,13 +200,12 @@
 <body>
   <header>
     <div class="logo-text">WhatsApp Bonos</div>
-    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+    <img class="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo" />
   </header>
 
   <hr />
 
   <section class="verified">
-    <img class="profile" src="https://via.placeholder.com/100?text=Logo" alt="logo" />
     <h2>
       Plataforma Verificada
       <img class="tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verificado" />
@@ -221,11 +217,11 @@
     Te estamos conectando con nuestro equipo vía WhatsApp.
   </div>
 
-  <a class="whatsapp-neon"
-     href="https://wa.me/5491123814605?text=Hola%20quiero%20jugar%20con%20mi%20bon0%20del%20200%25"
+  <a class="whatsapp-button" 
+     href="https://wa.me/5491123814605?text=hola%20quiero%20jugar%20con%20mi%20bon0%20del%20200%25" 
      target="_blank"
      onclick="fbq('trackCustom', 'ClickWhatsApp')">
-     💬 Ir a WhatsApp
+    Ir a WhatsApp
   </a>
 
   <div class="clientes">
@@ -273,12 +269,12 @@
       indice++;
     }
 
-    // Actualizar cada 10 segundos
     setInterval(actualizarNotificacion, 10000);
-    actualizarNotificacion(); // Mostrar primera notificación al cargar
+    actualizarNotificacion();
   </script>
 </body>
 </html>
+
 
 
 
