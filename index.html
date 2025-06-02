@@ -1,137 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Triplic4 con 463</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Bonos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+    fbq('init', '582357801126295');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=582357801126295&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to right, #000000, #111111);
-      color: white;
-      text-align: center;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #111111;
-      border-radius: 15px;
-      padding: 40px 20px;
-      box-shadow: 0 0 30px #ffd70022;
+    header {
+      margin-top: 30px;
+      text-align: center;
     }
 
-    .logo img {
-      height: 90px;
-      margin-bottom: 20px;
+    .logo-text {
+      color: #25d366;
+      font-weight: 700;
+      font-size: 24px;
     }
 
-    .title {
-      font-size: 32px;
-      font-weight: bold;
-      color: #FFD700;
+    .logo-img {
+      margin-top: 10px;
+      width: 80px;
+    }
+
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #ddd;
       margin: 20px 0;
     }
 
-    .subtitle {
-      font-size: 16px;
-      margin-bottom: 20px;
+    .verified {
+      text-align: center;
     }
 
-    .bonus {
-      font-size: 22px;
-      color: #FFD700;
-      margin-bottom: 10px;
+    .verified img.profile {
+      width: 100px;
+      border-radius: 50%;
+      margin: 20px 0;
     }
 
-    .whatsapp-btn {
-      display: inline-block;
-      margin: 30px auto;
-      padding: 20px 30px;
+    .verified h2 {
       font-size: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      color: #000;
-      background: #25D366;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #25D366, 0 0 10px #25D366 inset;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: pulse 2s infinite;
+      margin: 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
     }
 
-    .whatsapp-btn:hover {
+    .verified h2 img.tick {
+      width: 22px;
+      height: 22px;
+    }
+
+    .verified .green {
+      color: #25d366;
+      font-weight: 600;
+    }
+
+    .message {
+      background: #e8f7f0;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .whatsapp-neon {
+      display: inline-block;
+      background-color: #25d366;
+      color: #000;
+      padding: 18px 32px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 40px;
+      text-decoration: none;
+      text-align: center;
+      margin: 30px auto;
+      box-shadow: 0 0 20px #25d366, 0 0 10px #25d366 inset;
+      animation: pulse 2s infinite ease-in-out;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .whatsapp-neon:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 30px #25D366, 0 0 20px #25D366 inset;
+      box-shadow: 0 0 30px #25d366, 0 0 20px #25d366 inset;
     }
 
     @keyframes pulse {
-      0% { box-shadow: 0 0 10px #25D366, 0 0 5px #25D366 inset; }
-      50% { box-shadow: 0 0 25px #25D366, 0 0 15px #25D366 inset; }
-      100% { box-shadow: 0 0 10px #25D366, 0 0 5px #25D366 inset; }
+      0%, 100% {
+        box-shadow: 0 0 10px #25d366, 0 0 5px #25d366 inset;
+      }
+      50% {
+        box-shadow: 0 0 25px #25d366, 0 0 15px #25d366 inset;
+      }
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+    .clientes {
+      background-color: #2ec4a7;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
-    .feature {
-      background: #222;
-      padding: 15px;
+    .trustpilot {
+      font-size: 14px;
+      padding: 8px 15px;
+      border: 1px dashed #999;
       border-radius: 10px;
-      width: 45%;
-      box-sizing: border-box;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .trustpilot img {
+      margin-top: 5px;
+      max-width: 120px;
+    }
+
+    .notificacion {
+      position: fixed;
+      bottom: 110px;
+      left: 20px;
+      background: #111;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeinout 5s infinite;
+    }
+
+    @keyframes fadeinout {
+      0%,100% { opacity: 0; transform: translateY(20px); }
+      10%,90% { opacity: 1; transform: translateY(0); }
+    }
+
+    .notificacion img {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      margin-right: 8px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to right, #00d084, #25d366);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     @media (max-width: 600px) {
-      .feature {
-        width: 100%;
+      .whatsapp-neon, .clientes {
+        font-size: 14px;
+        padding: 14px 22px;
       }
-
-      .title {
-        font-size: 26px;
-      }
-
-      .whatsapp-btn {
-        font-size: 18px;
-        padding: 16px 24px;
+      .message {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">
-      <img src="logo.png" alt="Logo 463">
-    </div>
-    <div class="title">⚡ Triplic4 Con 463</div>
-    <div class="subtitle">Sin límites. Sin excusas. Sólo ganás.</div>
-    <div class="bonus">🔥 Bon0 del 200% en tu primera carga 🔥</div>
-    <div>↓Reservalo Escribiéndonos A Nuestro WhatsApp↓</div>
+  <header>
+    <div class="logo-text">WhatsApp Bonos</div>
+    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" />
+  </header>
 
-    <a class="whatsapp-btn"
-       href="https://wa.me/5491123814605?text=Hola%2C%20quiero%20mi%20bon0%20del%20200%25"
-       target="_blank">
-      🟢 Quiero Mi Bon0 del 200%
-    </a>
+  <hr />
 
-    <div class="features">
-      <div class="feature">📥 Recargas inmediatas</div>
-      <div class="feature">💸 Pagos sin restricciones</div>
-      <div class="feature">🎲 Juegos sin límites</div>
-      <div class="feature">🔒 Seguridad garantizada</div>
+  <section class="verified">
+    <img class="profile" src="https://via.placeholder.com/100?text=Logo" alt="logo" />
+    <h2>
+      Plataforma Verificada
+      <img class="tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verificado" />
+    </h2>
+    <p class="green">Casino de Confianza</p>
+  </section>
+
+  <div class="message">
+    Te estamos conectando con nuestro equipo vía WhatsApp.
+  </div>
+
+  <a class="whatsapp-neon"
+     href="https://wa.me/5491123814605?text=Hola%20quiero%20jugar%20con%20mi%20bon0%20del%20200%25"
+     target="_blank"
+     onclick="fbq('trackCustom', 'ClickWhatsApp')">
+     💬 Ir a WhatsApp
+  </a>
+
+  <div class="clientes">
+    👥 +10.000 CLIENTES GANANDO todos los días
+  </div>
+
+  <div class="trustpilot">
+    "Excelente" ⭐⭐⭐⭐⭐ Calificación 4.9/5 en 🟩 Trustpilot<br/>
+    <img src="https://logowik.com/content/uploads/images/trustpilot-stars9095.jpg" alt="Trustpilot" />
+  </div>
+
+  <!-- Notificación dinámica de premios -->
+  <div class="notificacion" id="notificacion">
+    <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="usuario" />
+    <div id="noti-text">
+      <strong>Mario</strong><br />
+      🎁 Reclamó su premio de $10.000<br />
+      📍 Desde Buenos Aires • hace 1 min
     </div>
   </div>
+
+  <div class="footer">
+    🎁 BONO ACTIVO - ¡Solicítalo ahora por WhatsApp!
+  </div>
+
+  <script>
+    const premios = [
+      { nombre: "Mario", monto: "$10.000", ciudad: "Buenos Aires", tiempo: "hace 1 min" },
+      { nombre: "Laura", monto: "$5.500", ciudad: "Córdoba", tiempo: "hace 2 min" },
+      { nombre: "Carlos", monto: "$8.200", ciudad: "Rosario", tiempo: "hace 3 min" },
+      { nombre: "Sofía", monto: "$15.000", ciudad: "Mendoza", tiempo: "hace 4 min" },
+      { nombre: "Pedro", monto: "$7.300", ciudad: "Tucumán", tiempo: "hace 5 min" },
+      { nombre: "Ana", monto: "$12.500", ciudad: "Salta", tiempo: "hace 6 min" },
+    ];
+
+    let indice = 0;
+    function actualizarNotificacion() {
+      const notiText = document.getElementById("noti-text");
+      const premio = premios[indice % premios.length];
+      notiText.innerHTML = `
+        <strong>${premio.nombre}</strong><br />
+        🎁 Reclamó su premio de ${premio.monto}<br />
+        📍 Desde ${premio.ciudad} • ${premio.tiempo}
+      `;
+      indice++;
+    }
+
+    // Actualizar cada 10 segundos
+    setInterval(actualizarNotificacion, 10000);
+    actualizarNotificacion(); // Mostrar primera notificación al cargar
+  </script>
 </body>
 </html>
+
+
 
